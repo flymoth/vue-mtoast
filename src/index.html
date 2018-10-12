@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-mtoast</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript" src="../dist//vue-mtoast.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="toast">点击</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            toast() {
+                this.$toast.show("nihao")
+            }
+        },
+    })
+</script>
+
+</html>
