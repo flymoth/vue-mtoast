@@ -1,41 +1,39 @@
 <template>
-    <section class="toast-container">
-        <div class="toast" :class="[visible?'fade-in':'fade-out']">
-            <span v-text="msg"></span>
-        </div>
-    </section>
+    <transition name="fade">
+        <section class="toast-container">
+            <div class="toast">
+                <span v-text="msg"></span>
+            </div>
+        </section>
+    </transition>
 </template>
 
 <script>
 export default {
 	data() {
 		return {
-			visible: false,
-			msg: ''
+			msg: ""
 		}
 	}
 }
 </script>
 
 <style lang="scss">
+.fade-enter-active {
+	animation: fade-in 0.5s;
+}
+.fade-leave-active {
+	animation: fade-in 0.5s reverse;
+}
 @keyframes fade-in {
 	0% {
 		opacity: 0;
-		transform: scale(0.7);
+	}
+	50% {
+		opacity: 0.5;
 	}
 	100% {
 		opacity: 1;
-		transform: scale(1);
-	}
-}
-@keyframes fade-out {
-	0% {
-		opacity: 1;
-		transform: scale(1);
-	}
-	100% {
-		opacity: 0;
-		transform: scale(0.7);
 	}
 }
 .toast-container {
@@ -56,16 +54,6 @@ export default {
 		color: white;
 		background-color: #000000a6;
 		border-radius: 5px;
-	}
-	.fade-in {
-		animation-name: fade-in;
-		animation-duration: 0.3s;
-		animation-fill-mode: both;
-	}
-	.fade-out {
-		animation-name: fade-out;
-		animation-duration: 0.3s;
-		animation-fill-mode: both;
 	}
 }
 </style>
