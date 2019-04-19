@@ -21,10 +21,10 @@ Vue.use(MToast)
 <button @click="toast">点击</button>
 
 toast() {
-    this.$toast.show("hello") //基本用法
+    this.$toast("hello") //基本用法
 }
 
 toast() {
-    this.$toast.show("hello",{duration: 1000}) //自定义持续时间
+    this.$toast("hello",{duration: 1000}) //自定义持续时间
 }
 ```
