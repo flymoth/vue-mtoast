@@ -23,8 +23,22 @@ Vue.use(MToast)
 toast() {
     this.$toast("hello") //基本用法
 }
+```
 
+```
 toast() {
     this.$toast("hello",{duration: 1000}) //自定义持续时间
+}
+```
+
+```
+toast() {
+    this.$toast.success("hello",{duration: 1000}) //成功
+}
+```
+
+```
+toast() {
+    this.$toast.error("hello",{duration: 1000}) //失败
 }
 ```

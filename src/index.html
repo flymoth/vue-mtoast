@@ -7,11 +7,24 @@
 		<title>vue-mtoast</title>
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 		<script type="text/javascript" src="../dist//vue-mtoast.js"></script>
+		<style>
+			#app {
+				text-align: center;
+			}
+			.demo-btn {
+				color: #ffffff;
+				width: 100px;
+				height: 40px;
+				margin-top: 50px;
+				border-radius: 25px;
+				background: #007fff;
+			}
+		</style>
 	</head>
 
 	<body>
 		<div id="app">
-			<button @click="toast">点击</button>
+			<button class="demo-btn" @click="toast">Click me</button>
 		</div>
 	</body>
 	<script>
@@ -19,7 +32,7 @@
 			el: "#app",
 			methods: {
 				toast() {
-					this.$toast("nihao")
+					this.$toast.error("hello world!")
 				}
 			}
 		})

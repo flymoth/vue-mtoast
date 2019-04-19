@@ -2,6 +2,8 @@
     <transition name="fade">
         <section class="toast-container">
             <div class="toast">
+                <span v-if="type==='error'">✗</span>
+                <span v-if="type==='success'">✓</span>
                 <span v-text="msg"></span>
             </div>
         </section>
@@ -12,6 +14,7 @@
 export default {
 	data() {
 		return {
+			type: "",
 			msg: ""
 		}
 	}
